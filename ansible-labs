@@ -2,6 +2,8 @@ Ansible Lab Steps
 =================
 Login to AWS Console
 
+==================================================
+Task:1
 ################################################
 Lab 1: Installation and Configuration of Ansible
 ################################################
@@ -165,9 +167,10 @@ exit
 
 # Use ping module to check if the managed nodes are able to interpret the ansible modules
 ansible all -m ping
-
+==================================
+Task:2
 ################################
-Lab 2: Exploring Ad-Hoc Commands
+Lab 1: Exploring Ad-Hoc Commands
 ################################
 
 sudo vi /etc/ansible/hosts
@@ -245,7 +248,10 @@ localhost ansible_connection=local
 # save the file using "ESCAPE + :wq!"
 
 ====================================================================================
-================================================================================
+Task:3
+====================================================================================
+Lab:1
+====================================================================================
 Playbook
 -----------------
 vi first.yml
@@ -273,7 +279,7 @@ ansible all -m command -a "ls -l"
 
 ===========================================================
 --------------
-Lab3:
+Lab2:
 --------------
 vi install-apache.yml
 ---
@@ -319,7 +325,7 @@ save the file
  # curl 10.142.0.23
 =================================================================
 --------------
-Lab4:
+Lab3:
 ------------------
 vi putfile.yml
 ---
@@ -343,7 +349,7 @@ save the file
 #  ansible all -m command -a "ls -l /home/cloudthat" -b    (-b is become root user)
 
 
-Lab4a:
+Lab4:
 
 vi p2.yml
 ---
@@ -385,7 +391,7 @@ save the file
 #  ansible all -a "sudo cat /home/test/ansible/hello.txt"
 
 
-Task 2: Uninstalling Apache Service
+Task 5: Uninstalling Apache Service
 =========================================
 
 vi service.yml
@@ -415,9 +421,9 @@ save the file
 
 =====================================================
 
-Lab 5: Implementing Ansible Variables
-
-Task 1: Configuring packages in ansible using variables
+Task:4 Implementing Ansible Variables
+==========================================================
+Lab 1: Configuring packages in ansible using variables
 --------------------------------
 
 vi implement-vars.yml
@@ -464,7 +470,7 @@ ansible-playbook implement-vars.yml
 view page use the public ip address of the vm 
 
 
-Task 2: Implementing ansible variables using extra-vars option
+Lab 2: Implementing ansible variables using extra-vars option
 ----------------------------------------
 # create new file in the same location
 
@@ -484,7 +490,7 @@ vi index1.html
 # ansible-playbook implement-vars.yml --extra-vars "source=/home/ec2-user/lab5/file/index1.html"
 
 
-Task 3: Configuring variables as a separate file and implementing ansible playbook
+Lab 3: Configuring variables as a separate file and implementing ansible playbook
 --------------------------------
 
 vi implement-vars1.yml
@@ -530,9 +536,9 @@ vi index.html
 
 # ansible-playbook implement-vars1.yml
 =========================================================
-
+Task:5 Inclusion
 =========================================================
-Lab 6 Task Inclusion
+Lab:1 Task Inclusion
 ==============================
 add the line in the inventory
 
@@ -606,7 +612,9 @@ Now run the third file
 ansible-playbook third.yaml
 =================================================================================
 ##########################################################################################
-Lab 7: Implementing Ansible Vault
+Task:6
+========================================================================================
+Lab:1 Implementing Ansible Vault
 ###########################################################################################
 # Switch to labs directory inside /home/ec2-user
   cd ~/labs 
@@ -667,10 +675,11 @@ Lab 7: Implementing Ansible Vault
   # Verify that playbook contents are visible in plain-text
   cat implement-vault.yml
 ===========================================================================
-===========================================================
-Task 1: Loops with Ansible Playbook
 =========================================================================
-
+Task 7: Loops with Ansible Playbook
+=========================================================================
+Lab:1
+============================================================================
 
 vi looplab.yml
 ---
@@ -696,7 +705,7 @@ $ ansible-playbook looplab.yml
 ansible all -a "tail -n 3 /etc/passwd"
 
 ==========================================================================================
-Task 2: Tags with Ansible Playbooks
+Lab 2: Tags with Ansible Playbooks
 ==========================================================================================
 # Create and edit tagslabs.yml in the same labs directory 
 
@@ -732,7 +741,7 @@ $ ansible-playbook -t "logging" tagslabs.yml
 $ ansible-playbook -t "packages" tagslabs.yml
 
 =============================================================================================
-Task 3: Prompts with Ansible Playbooks
+Lab 3: Prompts with Ansible Playbooks
 =============================================================================================
 #Create and edit promptlab.yml in the same labs directory 
 
@@ -769,10 +778,10 @@ $ rpm -qa | grep httpd
 ansible all -m "command" -a "rpm -qa | grep httpd"
 ================================================================================================
 ############################################################################################
-Lab 10: Implementing Ansible Roles
+Task 8: Implementing Ansible Roles
 ############################################################################################
 
-Task 1: Implementing Ansible Roles
+Lab 1: Implementing Ansible Roles
 ====================================================================================
 
 cd ~/
@@ -908,9 +917,10 @@ $ ansible-playbook implement_roles.yml
 # It will show the webpage with msg "We are performing the Roles Lab"
 
 ==========================================================================================
-Task 2: Installing Java through Ansible Galaxy Roles galaxy
+Task 9: Installing Java through Ansible Galaxy Roles galaxy
 ==========================================================================================
-
+Lab:1
+=======================================================================================
 #Install java form ansible galaxy role from galaxy.ansible.com   
 
 #Now Install the role 'geerlingguy.java' from ansible galaxy repository. 
